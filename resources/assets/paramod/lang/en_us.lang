@@ -1,0 +1,10 @@
+itemGroup.paradoxaltabs=Paradoxal
+item.logo.name=Logo
+item.solar_ruby.name=Solar Ruby
+item.paradoxal_ruby.name=Paradoxal Ruby
+item.lunar_ruby.name=Lunar Ruby
+item.dark_ruby.name= Dark Ruby
+tile.dark_ore.name=Dark Ore
+tile.lunar_ore.name=Lunar Ore
+tile.paradox_ore.naame=Paradox Ore
+tile.solar_ore.name=Solar Ore
