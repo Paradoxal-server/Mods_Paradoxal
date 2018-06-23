@@ -16,7 +16,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModItems {
 	
 	public static Item logo;
-	private static Item paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby;
+	public static Item paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby;
+	public static Item paradoxal_ingot,lunar_ingot,solar_ingot,dark_ingot;
+	public static Item small_coal;
 	private static Item[] items; 
 	
 	public static void init() {
@@ -26,8 +28,13 @@ public class ModItems {
 		lunar_ruby = new ItemBasic("lunar_ruby");
 		solar_ruby = new ItemBasic("solar_ruby");
 		dark_ruby = new ItemBasic("dark_ruby");
+		paradoxal_ingot = new ItemBasic("paradoxal_ingot");
+		lunar_ingot = new ItemBasic("lunar_ingot");
+		solar_ingot = new ItemBasic("solar_ingot");
+		dark_ingot = new ItemBasic("dark_ingot");
+		small_coal = new ItemBasic("small_coal");
 		
-		items = new Item[]{logo,paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby};
+		items = new Item[]{logo,paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby,paradoxal_ingot,lunar_ingot,solar_ingot,dark_ingot,small_coal};
 	}
 	
 	@SubscribeEvent

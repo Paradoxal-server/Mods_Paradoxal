@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @Mod.EventBusSubscriber(modid=Reference.MODID)
 public class ModBlocks {
 	
-	private static Block dark_ore,lunar_ore,paradox_ore,solar_ore;
+	public static Block dark_ore,lunar_ore,paradox_ore,solar_ore;
 	private static Block[] blocks;
 	
 	public static void init() {

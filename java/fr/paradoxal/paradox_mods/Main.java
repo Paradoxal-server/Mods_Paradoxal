@@ -55,6 +55,7 @@ public class Main {
 		System.out.println(Reference.MODID + ":preInit");
 		proxy.preInit();
 		MinecraftForge.EVENT_BUS.register(new RegistringEvent());
+
 	}
 	
 	@EventHandler
