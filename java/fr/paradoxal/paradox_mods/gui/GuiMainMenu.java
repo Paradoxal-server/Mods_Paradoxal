@@ -1,12 +1,9 @@
 package fr.paradoxal.paradox_mods.gui;
 
-import com.google.common.eventbus.Subscribe;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiWorldSelection;
-import net.minecraft.client.multiplayer.GuiConnecting;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
