@@ -2,10 +2,13 @@ package fr.paradoxal.paradox_mods.gui;
 
 import fr.paradoxal.paradox_mods.Main;
 import fr.paradoxal.paradox_mods.util.Reference;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.FMLClientHandler;
@@ -16,13 +19,14 @@ public class newGuiConnecting extends GuiScreen {
     /**
      * L'image à dessiner en arrière plan.
      */
-    private static final ResourceLocation backgroundImage = new ResourceLocation(Reference.MODID,"textures/gui/title/mojang.png");
     private transient long updateCounter = 0;
-
-    String chargementText = "§6Chargement§f de la porte ..."; // A vous de mettre ce que vous voulez !
+    private static final ResourceLocation backgroundImage = new ResourceLocation(Reference.MODID,"textures/gui/title/back.png");
+    String chargementText = "§6Chargement§f du serveur ..."; // A vous de mettre ce que vous voulez !
     String serverName = "§6Paradoxal"; // A vous de mettre ce que vous voulez !
     String loading = "§6Connexion§7 au serveur ! ..."; // A vous de mettre ce que vous voulez !
     String bfsName = "§7Serveur"; // A vous de mettre ce que vous voulez !
+
+
 
     @Override
     public void initGui() {
@@ -41,26 +45,24 @@ public class newGuiConnecting extends GuiScreen {
     }
 
     public void drawBack() {
-        GL11.glViewport(0, 0, 256, 256);
-        this.mc.getTextureManager().bindTexture(this.backgroundImage);
-        GL11.glViewport(0, 0, this.mc.displayWidth, this.mc.displayHeight);
+        mc.getTextureManager().bindTexture(backgroundImage);
+        int i = this.width;
+        int j = this.height;
         Tessellator tessellator = Tessellator.getInstance();
-        tessellator.getBuffer().begin(7,DefaultVertexFormats.POSITION_TEX);
-        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
-        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
-        tessellator.getBuffer().color(1.0F,1.0F,1.0F,1.0F);
-        // On ajoute les vertices et leurs positions sur la texture.
-        {
-            tessellator.getBuffer().pos(0, 0, this.zLevel);
-            tessellator.getBuffer().pos(0, this.height, this.zLevel);
-            tessellator.getBuffer().pos(this.width, this.height, this.zLevel);
-            tessellator.getBuffer().pos(this.width, 0, this.zLevel);
-            tessellator.draw();
-        }
+        BufferBuilder bufferbuilder = tessellator.getBuffer();
+        bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
+        bufferbuilder.pos(0.0D, 0.0D, (double)this.zLevel).tex(0.0D, 0.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        bufferbuilder.pos(0.0D, (double)j, (double)this.zLevel).tex(0.0D, 1.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        bufferbuilder.pos((double)i, (double)j, (double)this.zLevel).tex(1.0D, 1.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        bufferbuilder.pos((double)i, 0.0D, (double)this.zLevel).tex(1.0D, 0.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        tessellator.draw();
     }
 
     public void drawScreen(int par1, int par2, float par3){
         drawBack();
+
+        drawHorizontalLine(0, this.width, this.height +47, 0xff000000);
+        drawHorizontalLine(0, this.width, this.height + 46, 0xff737373);
 
         drawHorizontalLine(0, this.width, this.height - 47, 0xff000000);
         drawHorizontalLine(0, this.width, this.height - 46, 0xff737373);
