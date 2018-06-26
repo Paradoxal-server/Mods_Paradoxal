@@ -1,9 +1,11 @@
 package fr.paradoxal.paradox_mods.init;
 
+import fr.paradoxal.paradox_mods.init.Item.PickaxeToolsBase;
 import fr.paradoxal.paradox_mods.items.ItemBasic;
 import fr.paradoxal.paradox_mods.util.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemPickaxe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -15,13 +17,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @Mod.EventBusSubscriber(modid=Reference.MODID)
 public class ModsTools  {
 
-    public static Item tools_hammer;
     private static Item[] items;
 
     public static void init() {
-        tools_hammer = new ItemBasic("tools_hammer");
 
-        items = new Item[] {tools_hammer};
+        items = new Item[] {};
     }
 
     @SubscribeEvent
