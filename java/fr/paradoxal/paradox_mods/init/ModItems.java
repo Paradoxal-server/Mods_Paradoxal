@@ -19,6 +19,7 @@ public class ModItems {
 	public static Item paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby;
 	public static Item paradoxal_ingot,lunar_ingot,solar_ingot,dark_ingot;
 	public static Item small_coal;
+	public static Item paradoxal_dust, lunar_dust,solar_dust,dark_dust;
 	private static Item[] items; 
 	
 	public static void init() {
@@ -33,8 +34,14 @@ public class ModItems {
 		solar_ingot = new ItemBasic("solar_ingot");
 		dark_ingot = new ItemBasic("dark_ingot");
 		small_coal = new ItemBasic("small_coal");
-		
-		items = new Item[]{logo,paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby,paradoxal_ingot,lunar_ingot,solar_ingot,dark_ingot,small_coal};
+		paradoxal_dust = new ItemBasic("paradoxal_dust");
+		lunar_dust = new ItemBasic("lunar_dust");
+		solar_dust = new ItemBasic("solar_dust");
+		dark_dust = new ItemBasic("dark_dust");
+		items = new Item[]{
+				logo,paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby,paradoxal_ingot,lunar_ingot,solar_ingot,dark_ingot,small_coal,
+				paradoxal_dust,lunar_dust,solar_dust,dark_dust
+		};
 	}
 	
 	@SubscribeEvent
