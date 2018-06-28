@@ -5,10 +5,10 @@ import net.minecraft.item.ItemAxe;
 
 public class AxeToolsBase extends ItemAxe {
 
-    protected AxeToolsBase(String name, ToolMaterial material) {
-        super(material);
-        setUnlocalizedName(name);
+    public AxeToolsBase(String name,ToolMaterial material, float damage, float speed) {
+        super(material, damage, speed);
         setRegistryName(name);
+        setUnlocalizedName(name);
         setCreativeTab(Main.paradoxalTabs);
     }
 }
