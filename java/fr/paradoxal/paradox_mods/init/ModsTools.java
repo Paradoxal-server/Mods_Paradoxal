@@ -1,11 +1,8 @@
 package fr.paradoxal.paradox_mods.init;
 
-import fr.paradoxal.paradox_mods.init.Item.PickaxeToolsBase;
-import fr.paradoxal.paradox_mods.items.ItemBasic;
 import fr.paradoxal.paradox_mods.util.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemPickaxe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;

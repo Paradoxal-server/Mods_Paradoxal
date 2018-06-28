@@ -1,18 +1,18 @@
 package fr.paradoxal.paradox_mods.gui;
 
+import org.lwjgl.opengl.GL11;
+
 import fr.paradoxal.paradox_mods.Main;
 import fr.paradoxal.paradox_mods.util.Reference;
-import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.FMLClientHandler;
-import org.lwjgl.opengl.GL11;
 
 public class newGuiConnecting extends GuiScreen {
 
@@ -66,7 +66,7 @@ public class newGuiConnecting extends GuiScreen {
 
         drawHorizontalLine(0, this.width, this.height - 47, 0xff000000);
         drawHorizontalLine(0, this.width, this.height - 46, 0xff737373);
-        this.drawRect(0, this.height - 45, this.width, this.height, 0xff333333);
+        Gui.drawRect(0, this.height - 45, this.width, this.height, 0xff333333);
         // Barre de progression
         drawRect(this.width / 2 - 101, this.height - 28, this.width / 2 + 101, this.height - 15, 0xfd8d8d80);
         drawRect(this.width / 2 - 100, this.height - 27, this.width / 2 + 100, this.height - 16, 0xf0000000);
