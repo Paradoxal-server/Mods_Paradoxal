@@ -10,15 +10,18 @@ public class ClientProxy extends CommonProxy{
 	public void preInit() {
 		super.preInit();
 		MinecraftForge.EVENT_BUS.register(new GuiMainMenu());
+		System.out.println("Paradoxal: Client - preInit");
 	}
 	
 	@Override
 	public void init() {
 		super.init();
+		System.out.println("Paradoxal: Client - init");
 	}
 	
 	@Override
 	public void postInit() {
 		super.postInit();
+		System.out.println("Paradoxal: Client - Postinit");
 	}
 }
