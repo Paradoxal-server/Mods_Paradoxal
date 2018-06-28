@@ -1,5 +1,7 @@
 package fr.paradoxal.paradox_mods.init;
 
+import fr.paradoxal.paradox_mods.init.Item.PickaxeToolsBase;
+import fr.paradoxal.paradox_mods.materails.ToolListMaterial;
 import fr.paradoxal.paradox_mods.util.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -14,11 +16,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @Mod.EventBusSubscriber(modid=Reference.MODID)
 public class ModsTools  {
 
+    private static Item paradoxal_pickaxe,lunar_pickaxe,solar_pickaxe,dark_pickaxe;
     private static Item[] items;
 
     public static void init() {
 
-        items = new Item[] {};
+        paradoxal_pickaxe = new PickaxeToolsBase("paradoxal_pickaxe",ToolListMaterial.paradoxal_Material);
+        lunar_pickaxe = new PickaxeToolsBase("lunar_pickaxe",ToolListMaterial.lunar_Material);
+
+        items = new Item[] {paradoxal_pickaxe,lunar_pickaxe};
     }
 
     @SubscribeEvent
