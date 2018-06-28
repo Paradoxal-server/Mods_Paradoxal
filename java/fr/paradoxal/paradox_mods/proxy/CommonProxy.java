@@ -16,9 +16,11 @@ public class CommonProxy {
 	{
 		new ModRecipes().RecipeSmetlingRecipes();
         GameRegistry.registerFuelHandler(new IFuelHandlerPara());
-		ResourceLocation a = new ResourceLocation("tools_Hammer");
 		ResourceLocation b = new ResourceLocation("small_coal");
-		new Craft().registercrafhammer(a,b);
+		new Craft().registercrafhammer(b);
+		ResourceLocation a = new ResourceLocation("paradoxal_sword");
+		new Craft().registerCraftDarkSword(a);
+
 	}
 	
 	public void postInit() {

@@ -38,6 +38,7 @@ public class ModItems {
 		lunar_dust = new ItemBasic("lunar_dust");
 		solar_dust = new ItemBasic("solar_dust");
 		dark_dust = new ItemBasic("dark_dust");
+
 		items = new Item[]{
 				logo,paradoxal_ruby,lunar_ruby,solar_ruby,dark_ruby,paradoxal_ingot,lunar_ingot,solar_ingot,dark_ingot,small_coal,
 				paradoxal_dust,lunar_dust,solar_dust,dark_dust

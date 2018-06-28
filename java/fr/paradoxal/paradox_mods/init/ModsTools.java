@@ -19,10 +19,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @Mod.EventBusSubscriber(modid=Reference.MODID)
 public class ModsTools  {
 
-    private static Item paradoxal_pickaxe,lunar_pickaxe,solar_pickaxe,dark_pickaxe;
-    private static Item paradoxal_axe,lunar_axe,solar_axe,dark_axe;
-    private static Item paradoxal_shovel,lunar_shovel,solar_shovel,dark_shovel;
-    private static Item paradoxal_sword,lunar_sword,solar_sword,dark_sword;
+    public static Item paradoxal_pickaxe,lunar_pickaxe,solar_pickaxe,dark_pickaxe;
+    public static Item paradoxal_axe,lunar_axe,solar_axe,dark_axe;
+    public static Item paradoxal_shovel,lunar_shovel,solar_shovel,dark_shovel;
+    public static Item paradoxal_sword,lunar_sword,solar_sword,dark_sword;
     private static Item[] items;
 
     public static void init() {
