@@ -9,4 +9,11 @@ public class Reference {
 	
 	public static final String CLIENT_PROXY = "fr.paradoxal.paradox_mods.proxy.ClientProxy";
 	public static final String SERVEUR_PROXY = "fr.paradoxal.paradox_mods.proxy.ServerProxy";
+
+	private static final boolean DEV_MODS = true;
+
+	public static boolean getDEVMODS()
+	{
+		return  DEV_MODS;
+	}
 }

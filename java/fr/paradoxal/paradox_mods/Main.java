@@ -1,9 +1,11 @@
 package fr.paradoxal.paradox_mods;
 
+import fr.paradoxal.paradox_mods.dev.DevMain;
 import fr.paradoxal.paradox_mods.event.RegistringEvent;
 import fr.paradoxal.paradox_mods.init.ModItems;
 import fr.paradoxal.paradox_mods.proxy.CommonProxy;
 import fr.paradoxal.paradox_mods.util.Reference;
+import fr.paradoxal.paradox_mods.world.GenerateOre;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,6 +16,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.logging.Logger;
 
@@ -21,7 +24,7 @@ import java.util.logging.Logger;
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCPETED_VERSION_MINECRAFT)
 public class Main {
 
-    public static Logger logger = Logger.getLogger("Paradoxal");
+    public static DevMain logger = new DevMain();
 
     public static final CreativeTabs paradoxalTabs = new CreativeTabs("paradoxaltabs") {
 
@@ -47,28 +50,29 @@ public class Main {
     public static CommonProxy proxy;
 
     public void initMods() {
-        System.out.println(Reference.MODID + " OS CLIENT: " + System.getProperty("os.name"));
-        System.out.println(Reference.MODID + " OS VERSION: " + System.getProperty("os.version"));
-        System.out.println(Reference.MODID + " OS ARCH: " + System.getProperty("os.arch"));
+        logger.loggerinfo("Main - Init Mods","OS CLIENT "+System.getProperty("os.name"));
+        logger.loggerinfo("Main - Init Mods","OS VERSION "+System.getProperty("os.version"));
+        logger.loggerinfo("Main - Init Mods","OS ARCH "+System.getProperty("os.name"));
     }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        System.out.println(Reference.MODID + ":preInit");
+        logger.loggerinfo("Pre Init","Phase de preinit");
         proxy.preInit();
         MinecraftForge.EVENT_BUS.register(new RegistringEvent());
+        GameRegistry.registerWorldGenerator(new GenerateOre(),0);
 
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        System.out.println(Reference.MODID + ":init");
+        logger.loggerinfo("Main - init","Phase de init");
         proxy.init();
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        System.out.println(Reference.MODID + ":postInit");
+        logger.loggerinfo("Main - postinit","Phase de posinit");
         proxy.postInit();
     }
 

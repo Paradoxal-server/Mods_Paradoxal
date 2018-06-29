@@ -30,7 +30,6 @@ public class newGuiConnecting extends GuiScreen {
 
     @Override
     public void initGui() {
-        Main.logger.info("Info");
         this.buttonList.add(new GuiButton(9, this.width - 100, this.height - 30, 60, 20, "Annuler"));
     }
     public void updateScreen()
