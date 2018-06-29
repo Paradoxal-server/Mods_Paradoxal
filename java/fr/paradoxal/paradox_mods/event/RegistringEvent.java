@@ -11,7 +11,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class RegistringEvent {
 
-	@SubscribeEvent
+
+    @SubscribeEvent
 	public void onItemRegistryt(RegistryEvent.Register<Item> e)
 	{
 		ModItems.init();
