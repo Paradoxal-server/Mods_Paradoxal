@@ -1,5 +1,6 @@
 package fr.paradoxal.paradox_mods.event;
 
+import fr.paradoxal.paradox_mods.init.ModArmor;
 import fr.paradoxal.paradox_mods.init.ModBlocks;
 import fr.paradoxal.paradox_mods.init.ModItems;
 import fr.paradoxal.paradox_mods.init.ModsTools;
@@ -27,5 +28,10 @@ public class RegistringEvent {
 	public void onBlockRegistry(RegistryEvent.Register<Block> e) {
 		ModBlocks.init();
 		e.getRegistry().registerAll(ModBlocks.getBlocks());
+	}
+	@SubscribeEvent
+	public void OnArmorRegistry(RegistryEvent.Register<Item> e){
+		ModArmor.init();
+		e.getRegistry().registerAll(ModArmor.getItems());
 	}
 }

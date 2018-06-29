@@ -12,15 +12,14 @@ import net.minecraft.world.World;
 public class ArmorHelmet extends ItemArmor {
     public ArmorHelmet(String name, ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
-        setRegistryName(name);
         setUnlocalizedName(name);
+        setRegistryName(name);
         setCreativeTab(Main.paradoxalTabs);
     }
 
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
         super.onArmorTick(world, player, itemStack);
-        player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, Integer.MAX_VALUE,2));
+        player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 30,2));
     }
-    ArmorT
 }

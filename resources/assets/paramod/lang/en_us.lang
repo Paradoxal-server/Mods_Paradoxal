@@ -30,3 +30,27 @@ item.paradoxal_sword.name=Paradoxal Sword
 item.lunar_sword.name=Lunar Sword
 item.solar_sword.name=Solar Sword
 item.dark_sword.name=Dark Sword
+item.solar_dust.name=Solar Dust
+item.paradoxal_dust.name=Paradoxal Dust
+item.lunar_dust.name=Lunar Dust
+item.dark_dust.name=Dark Dust
+
+item.lunar_helmet.name=Lunar Helmet
+item.lunar_chest.name=Lunar Chestplate
+item.lunar_leg.name=Lunar Leggins
+item.lunar_boots.name=Lunar Boots
+
+item.paradoxal_helmet.name=Paradoxal Helmet
+item.paradoxal_chest.name=Paradoxal Chestplate
+item.paradoxal_leg.name=Paradoxal Leggings
+item.paradoxal_boots.name=Paradoxal Boots
+
+item.solar_helmet.name=Solar Helmet
+item.solar_chest.name=Solar Chestplate
+item.solar_leg.name=Solar Leggging
+item.solar_boots.name=Solar Boots
+
+item.dark_helmet.name=Dark Helmet
+item.dark_chest.name=Dark Chestplate
+item.dark_leg.name=Dark Legging
+item.dark_boots.name=Dark Boots
