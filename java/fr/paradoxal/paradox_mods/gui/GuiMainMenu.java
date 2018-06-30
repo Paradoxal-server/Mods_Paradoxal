@@ -1,5 +1,6 @@
 package fr.paradoxal.paradox_mods.gui;
 
+import fr.paradoxal.paradox_mods.Main;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiOptions;
@@ -16,6 +17,7 @@ public class GuiMainMenu extends GuiScreen {
     @SubscribeEvent
     public void OnInitGui(GuiScreenEvent.InitGuiEvent.Post event)
     {
+        Main.logger.debug("GuiMainMenu","Menu principale");
         gui = event.getGui();
         if(gui instanceof net.minecraft.client.gui.GuiMainMenu) {
             for (Object b : event.getButtonList()) {

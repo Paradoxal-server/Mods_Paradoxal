@@ -13,9 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.logging.Logger;
@@ -40,6 +38,7 @@ public class Main {
     }.setBackgroundImageName("item_search.png");
 
     public Main() {
+        logger.debug("Main - Main","Paradoxal The serveur  best serveur");
         initMods();
     }
 
@@ -50,14 +49,14 @@ public class Main {
     public static CommonProxy proxy;
 
     public void initMods() {
-        logger.loggerinfo("Main - Init Mods","OS CLIENT "+System.getProperty("os.name"));
-        logger.loggerinfo("Main - Init Mods","OS VERSION "+System.getProperty("os.version"));
-        logger.loggerinfo("Main - Init Mods","OS ARCH "+System.getProperty("os.name"));
+         logger.debug("Main - init Mods","OS: "+System.getProperty("os.name"));
+         logger.debug("Main - init Mods","Version OS"+System.getProperty("os.version"));
+         logger.debug("Main - init Mods","Arch OS: "+System.getProperty("os.arch"));
     }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        logger.loggerinfo("Pre Init","Phase de preinit");
+        logger.debug("Main","PreInit");
         proxy.preInit();
         MinecraftForge.EVENT_BUS.register(new RegistringEvent());
         GameRegistry.registerWorldGenerator(new GenerateOre(),0);
@@ -66,14 +65,24 @@ public class Main {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        logger.loggerinfo("Main - init","Phase de init");
+        logger.debug("Main","Init");
         proxy.init();
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        logger.loggerinfo("Main - postinit","Phase de posinit");
+        logger.debug("Main","postInit");
         proxy.postInit();
+    }
+
+    @EventHandler
+    public void serverstart(FMLServerStartedEvent event){
+        logger.debug("Main","Start Serveur");
+    }
+
+    @EventHandler
+    public void severstop(FMLServerStoppingEvent event){
+        logger.debug("Main","Stop Serveur");
     }
 
 

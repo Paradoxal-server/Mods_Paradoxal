@@ -1,7 +1,7 @@
 package fr.paradoxal.paradox_mods.proxy;
 
+import fr.paradoxal.paradox_mods.Main;
 import fr.paradoxal.paradox_mods.gui.GuiMainMenu;
-import fr.paradoxal.paradox_mods.gui.newGuiConnecting;
 import net.minecraftforge.common.MinecraftForge;
 
 public class ClientProxy extends CommonProxy{
@@ -10,18 +10,18 @@ public class ClientProxy extends CommonProxy{
 	public void preInit() {
 		super.preInit();
 		MinecraftForge.EVENT_BUS.register(new GuiMainMenu());
-		System.out.println("Paradoxal: Client - preInit");
+		Main.logger.debug("ClientProxy - init","Entrés en phase de preinit");
 	}
 	
 	@Override
 	public void init() {
 		super.init();
-		System.out.println("Paradoxal: Client - init");
+		Main.logger.debug("ClientProxy - init","Entrés en phase de init");
 	}
 	
 	@Override
 	public void postInit() {
 		super.postInit();
-		System.out.println("Paradoxal: Client - Postinit");
+		Main.logger.debug("ClientProxy - init", "Entrés en phase de postinit");
 	}
 }

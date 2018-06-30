@@ -18,23 +18,23 @@ import java.util.Random;
 public class GenerateOre implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        Main.logger.loggerinfo("GenerateOre","Génération des minerai");
         switch (world.provider.getDimensionType())
         {
             case OVERWORLD:
-                if(Reference.getDEVMODS()==true)
-                {
+                if (world.getWorldInfo().getWorldName() == "minage") {
+                    Main.logger.debug("Generate Ore","World minage");
                     generateSurface(world, random, chunkX * 16, chunkZ * 16);
                 }
                 else {
-                    if (world.getWorldInfo().getWorldName() == "minage") {
-                        generateSurface(world, random, chunkX * 16, chunkZ * 16);
-                    }
-                    else
-                    {
-                        Main.logger.loggerinfo("GenerateOre","Pas mon de minage");
-                    }
                 }
+                if (world.getWorldInfo().getWorldName() == "minage1") {
+                    Main.logger.debug("Generate Ore","World no minage");
+                    generateSurface(world, random, chunkX * 16, chunkZ * 16);
+                }
+                else
+                 {
+                        Main.logger.debug("Generate Ore","World no minage");
+                 }
             case NETHER:
                 generateNether(world,random,chunkX*16,chunkZ*16);
             case THE_END:
