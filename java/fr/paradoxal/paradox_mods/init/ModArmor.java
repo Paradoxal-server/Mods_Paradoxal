@@ -1,6 +1,8 @@
 package fr.paradoxal.paradox_mods.init;
 
-import fr.paradoxal.paradox_mods.Main;
+import fr.paradoxal.paradox_mods.init.Item.Armor.CusBootsArmor;
+import fr.paradoxal.paradox_mods.init.Item.Armor.CusHelmetArmor;
+import fr.paradoxal.paradox_mods.init.Item.Armor.CusLegArmor;
 import fr.paradoxal.paradox_mods.init.armor.ArmorHelmet;
 import fr.paradoxal.paradox_mods.init.armor.ArmorbASE;
 import fr.paradoxal.paradox_mods.materails.ArmorMateriels;
@@ -22,6 +24,7 @@ public class ModArmor {
     public static Item paradoxal_chest,lunar_chest,solar_chest,dark_chest;
     public static Item paradoxal_leg,lunar_leg,solar_leg,dark_leg;
     public static Item paradoxal_boots,lunar_boots,solar_boots,dark_boots;
+    public static Item dragon_helmet,dragon_chest,dragon_leg,dragon_boots;
     private static Item[] items;
 
     public static void init() {
@@ -44,11 +47,17 @@ public class ModArmor {
         dark_leg = new ArmorbASE("dark_leg",ArmorMateriels.DARK_AMOR_MATERIEKS,1,EntityEquipmentSlot.LEGS);
         dark_boots = new ArmorbASE("dark_boots",ArmorMateriels.DARK_AMOR_MATERIEKS,0,EntityEquipmentSlot.FEET);
 
+        dragon_helmet = new CusHelmetArmor("dragon_helmet",ArmorMateriels.DRAGON_ARMOR,0,EntityEquipmentSlot.HEAD);
+        dragon_chest = new CusHelmetArmor("dragon_chest",ArmorMateriels.DRAGON_ARMOR,0,EntityEquipmentSlot.CHEST);
+        dragon_leg = new CusLegArmor("dragon_leg",ArmorMateriels.DRAGON_ARMOR,1,EntityEquipmentSlot.LEGS);
+        dragon_boots = new CusBootsArmor("dragon_boots",ArmorMateriels.DRAGON_ARMOR,0,EntityEquipmentSlot.FEET);
+
         items = new Item[]{
                 paradoxal_helmet,paradoxal_chest,paradoxal_leg,paradoxal_boots,
                 lunar_helmet,lunar_chest,lunar_leg,lunar_boots,
                 solar_helmet,solar_chest,solar_leg,solar_boots,
-                dark_helmet,dark_chest,dark_leg,dark_boots
+                dark_helmet,dark_chest,dark_leg,dark_boots,
+                dragon_helmet,dragon_chest,dragon_boots,dragon_leg
         };
     }
 

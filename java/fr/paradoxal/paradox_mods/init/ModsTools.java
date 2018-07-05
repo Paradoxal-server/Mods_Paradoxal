@@ -16,54 +16,60 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod.EventBusSubscriber(modid=Reference.MODID)
-public class ModsTools  {
+@Mod.EventBusSubscriber(modid = Reference.MODID)
+public class ModsTools {
 
-    public static Item paradoxal_pickaxe,lunar_pickaxe,solar_pickaxe,dark_pickaxe;
-    public static Item paradoxal_axe,lunar_axe,solar_axe,dark_axe;
-    public static Item paradoxal_shovel,lunar_shovel,solar_shovel,dark_shovel;
-    public static Item paradoxal_sword,lunar_sword,solar_sword,dark_sword;
+    public static Item paradoxal_pickaxe, lunar_pickaxe, solar_pickaxe, dark_pickaxe;
+    public static Item paradoxal_axe, lunar_axe, solar_axe, dark_axe;
+    public static Item paradoxal_shovel, lunar_shovel, solar_shovel, dark_shovel;
+    public static Item paradoxal_sword, lunar_sword, solar_sword, dark_sword;
+    public static Item dragon_sword, dragon_shovel, dragon_axe, dragon_pickaxe;
     private static Item[] items;
 
     public static void init() {
 
-        paradoxal_pickaxe = new PickaxeToolsBase("paradoxal_pickaxe",ToolListMaterial.paradoxal_Material);
-        lunar_pickaxe = new PickaxeToolsBase("lunar_pickaxe",ToolListMaterial.lunar_Material);
-        solar_pickaxe = new PickaxeToolsBase("solar_pickaxe",ToolListMaterial.solar_Material);
-        dark_pickaxe = new PickaxeToolsBase("dark_pickaxe",ToolListMaterial.dark_Material);
+        paradoxal_pickaxe = new PickaxeToolsBase("paradoxal_pickaxe", ToolListMaterial.paradoxal_Material);
+        lunar_pickaxe = new PickaxeToolsBase("lunar_pickaxe", ToolListMaterial.lunar_Material);
+        solar_pickaxe = new PickaxeToolsBase("solar_pickaxe", ToolListMaterial.solar_Material);
+        dark_pickaxe = new PickaxeToolsBase("dark_pickaxe", ToolListMaterial.dark_Material);
 
-        paradoxal_axe = new AxeToolsBase("paradoxal_axe",ToolListMaterial.paradoxal_Material,0.0f,0.0f);
-        lunar_axe = new AxeToolsBase("lunar_axe",ToolListMaterial.lunar_Material,0.0f,0.0f);
-        solar_axe = new AxeToolsBase("solar_axe",ToolListMaterial.solar_Material,0.0f,0.0f);
-        dark_axe = new AxeToolsBase("dark_axe",ToolListMaterial.dark_Material,0.0f,0.0f);
+        paradoxal_axe = new AxeToolsBase("paradoxal_axe", ToolListMaterial.paradoxal_Material, 0.0f, 0.0f);
+        lunar_axe = new AxeToolsBase("lunar_axe", ToolListMaterial.lunar_Material, 0.0f, 0.0f);
+        solar_axe = new AxeToolsBase("solar_axe", ToolListMaterial.solar_Material, 0.0f, 0.0f);
+        dark_axe = new AxeToolsBase("dark_axe", ToolListMaterial.dark_Material, 0.0f, 0.0f);
 
-        paradoxal_shovel = new ShovelToolsBase("paradoxal_shovel",ToolListMaterial.paradoxal_Material);
-        lunar_shovel = new ShovelToolsBase("lunar_shovel",ToolListMaterial.lunar_Material);
-        solar_shovel = new ShovelToolsBase("solar_shovel",ToolListMaterial.solar_Material);
-        dark_shovel = new ShovelToolsBase("dark_shovel",ToolListMaterial.dark_Material);
+        paradoxal_shovel = new ShovelToolsBase("paradoxal_shovel", ToolListMaterial.paradoxal_Material);
+        lunar_shovel = new ShovelToolsBase("lunar_shovel", ToolListMaterial.lunar_Material);
+        solar_shovel = new ShovelToolsBase("solar_shovel", ToolListMaterial.solar_Material);
+        dark_shovel = new ShovelToolsBase("dark_shovel", ToolListMaterial.dark_Material);
 
-        paradoxal_sword = new SwordToolsBase("paradoxal_sword",ToolListMaterial.paradoxal_material_sword);
-        lunar_sword = new SwordToolsBase("lunar_sword",ToolListMaterial.lunar_material_sword);
-        solar_sword = new SwordToolsBase("solar_sword",ToolListMaterial.solar_material_sword);
-        dark_sword = new SwordToolsBase("dark_sword",ToolListMaterial.dark_material_sword);
+        paradoxal_sword = new SwordToolsBase("paradoxal_sword", ToolListMaterial.paradoxal_material_sword);
+        lunar_sword = new SwordToolsBase("lunar_sword", ToolListMaterial.lunar_material_sword);
+        solar_sword = new SwordToolsBase("solar_sword", ToolListMaterial.solar_material_sword);
+        dark_sword = new SwordToolsBase("dark_sword", ToolListMaterial.dark_material_sword);
+
+        dragon_sword = new SwordToolsBase("dragon_sword", ToolListMaterial.dark_material_sword).setFull3D().setNoRepair();
+        dragon_pickaxe = new PickaxeToolsBase("dragon_pickaxe", ToolListMaterial.dragon_material).setFull3D().setNoRepair();
+        dragon_axe = new AxeToolsBase("dragon_axe", ToolListMaterial.dragon_material, 0.0f, 0.0f).setFull3D().setNoRepair();
+        dragon_shovel = new ShovelToolsBase("dragon_shovel", ToolListMaterial.dark_Material).setFull3D().setNoRepair();
 
         items = new Item[]{
-                paradoxal_pickaxe,lunar_pickaxe,solar_pickaxe,dark_pickaxe,paradoxal_axe,lunar_axe,solar_axe,dark_axe,
-                paradoxal_shovel,lunar_shovel,solar_shovel,dark_shovel,paradoxal_sword,lunar_sword,solar_sword,dark_sword
+                paradoxal_pickaxe, lunar_pickaxe, solar_pickaxe, dark_pickaxe, paradoxal_axe, lunar_axe, solar_axe, dark_axe,
+                paradoxal_shovel, lunar_shovel, solar_shovel, dark_shovel, paradoxal_sword, lunar_sword, solar_sword, dark_sword,
+                dragon_sword, dragon_pickaxe, dragon_axe, dragon_shovel
         };
     }
 
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void registermodels(ModelRegistryEvent e) {
-        for (Item item : items)
-        {
+        for (Item item : items) {
             registryModel(item);
         }
     }
 
     private static void registryModel(Item item) {
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID,item.getUnlocalizedName().substring(5)), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
     }
 
     public static Item[] getItems() {

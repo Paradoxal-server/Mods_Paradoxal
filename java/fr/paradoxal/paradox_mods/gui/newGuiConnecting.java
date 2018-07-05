@@ -1,8 +1,5 @@
 package fr.paradoxal.paradox_mods.gui;
 
-import org.lwjgl.opengl.GL11;
-
-import fr.paradoxal.paradox_mods.Main;
 import fr.paradoxal.paradox_mods.util.Reference;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
@@ -13,6 +10,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import org.lwjgl.opengl.GL11;
 
 public class newGuiConnecting extends GuiScreen {
 
@@ -20,23 +18,22 @@ public class newGuiConnecting extends GuiScreen {
      * L'image à dessiner en arrière plan.
      */
     private transient long updateCounter = 0;
-    private static final ResourceLocation backgroundImage = new ResourceLocation(Reference.MODID,"textures/gui/title/back.png");
+    private static final ResourceLocation backgroundImage = new ResourceLocation(Reference.MODID, "textures/gui/title/back.png");
     String chargementText = "§6Chargement§f du serveur ..."; // A vous de mettre ce que vous voulez !
     String serverName = "§6Paradoxal"; // A vous de mettre ce que vous voulez !
     String loading = "§6Connexion§7 au serveur ! ..."; // A vous de mettre ce que vous voulez !
     String bfsName = "§7Serveur"; // A vous de mettre ce que vous voulez !
 
 
-
     @Override
     public void initGui() {
         this.buttonList.add(new GuiButton(9, this.width - 100, this.height - 30, 60, 20, "Annuler"));
     }
-    public void updateScreen()
-    {
+
+    public void updateScreen() {
         this.updateCounter += 1;
         if (this.updateCounter == 100) {
-            FMLClientHandler.instance().connectToServerAtStartup("localhost",25565);
+            FMLClientHandler.instance().connectToServerAtStartup("localhost", 25565);
         }
         if (this.updateCounter >= 101) {
             this.mc.displayGuiScreen(new GuiMainMenu());
@@ -50,17 +47,17 @@ public class newGuiConnecting extends GuiScreen {
         Tessellator tessellator = Tessellator.getInstance();
         BufferBuilder bufferbuilder = tessellator.getBuffer();
         bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-        bufferbuilder.pos(0.0D, 0.0D, (double)this.zLevel).tex(0.0D, 0.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-        bufferbuilder.pos(0.0D, (double)j, (double)this.zLevel).tex(0.0D, 1.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-        bufferbuilder.pos((double)i, (double)j, (double)this.zLevel).tex(1.0D, 1.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
-        bufferbuilder.pos((double)i, 0.0D, (double)this.zLevel).tex(1.0D, 0.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        bufferbuilder.pos(0.0D, 0.0D, (double) this.zLevel).tex(0.0D, 0.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        bufferbuilder.pos(0.0D, (double) j, (double) this.zLevel).tex(0.0D, 1.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        bufferbuilder.pos((double) i, (double) j, (double) this.zLevel).tex(1.0D, 1.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
+        bufferbuilder.pos((double) i, 0.0D, (double) this.zLevel).tex(1.0D, 0.0D).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
         tessellator.draw();
     }
 
-    public void drawScreen(int par1, int par2, float par3){
+    public void drawScreen(int par1, int par2, float par3) {
         drawBack();
 
-        drawHorizontalLine(0, this.width, this.height +47, 0xff000000);
+        drawHorizontalLine(0, this.width, this.height + 47, 0xff000000);
         drawHorizontalLine(0, this.width, this.height + 46, 0xff737373);
 
         drawHorizontalLine(0, this.width, this.height - 47, 0xff000000);
@@ -101,13 +98,12 @@ public class newGuiConnecting extends GuiScreen {
         super.drawScreen(par1, par2, par3);
     }
 
-    protected void translateToStringPos(String text, float scale, int x, int y)
-    {
+    protected void translateToStringPos(String text, float scale, int x, int y) {
         float stringWidth = this.fontRenderer.getStringWidth(text) * scale;
         GL11.glTranslatef(x - (stringWidth / 2f), y, 0.0f);
     }
-    public void actionPerformed(GuiButton button)
-    {
+
+    public void actionPerformed(GuiButton button) {
         if (button.id == 9) {
             this.mc.displayGuiScreen(new GuiMainMenu());
         }

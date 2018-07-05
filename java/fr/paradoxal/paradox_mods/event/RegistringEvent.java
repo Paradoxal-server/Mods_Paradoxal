@@ -13,26 +13,26 @@ public class RegistringEvent {
 
 
     @SubscribeEvent
-	public void onItemRegistryt(RegistryEvent.Register<Item> e)
-	{
-		ModItems.init();
-		e.getRegistry().registerAll(ModItems.getItems());
-	}
+    public void onItemRegistryt(RegistryEvent.Register<Item> e) {
+        ModItems.init();
+        e.getRegistry().registerAll(ModItems.getItems());
+    }
 
-	@SubscribeEvent
-	public void onToolsRegistry(RegistryEvent.Register<Item> e)
-	{
-		ModsTools.init();
-		e.getRegistry().registerAll(ModsTools.getItems());
-	}
-	@SubscribeEvent
-	public void onBlockRegistry(RegistryEvent.Register<Block> e) {
-		ModBlocks.init();
-		e.getRegistry().registerAll(ModBlocks.getBlocks());
-	}
-	@SubscribeEvent
-	public void OnArmorRegistry(RegistryEvent.Register<Item> e){
-		ModArmor.init();
-		e.getRegistry().registerAll(ModArmor.getItems());
-	}
+    @SubscribeEvent
+    public void onToolsRegistry(RegistryEvent.Register<Item> e) {
+        ModsTools.init();
+        e.getRegistry().registerAll(ModsTools.getItems());
+    }
+
+    @SubscribeEvent
+    public void onBlockRegistry(RegistryEvent.Register<Block> e) {
+        ModBlocks.init();
+        e.getRegistry().registerAll(ModBlocks.getBlocks());
+    }
+
+    @SubscribeEvent
+    public void OnArmorRegistry(RegistryEvent.Register<Item> e) {
+        ModArmor.init();
+        e.getRegistry().registerAll(ModArmor.getItems());
+    }
 }

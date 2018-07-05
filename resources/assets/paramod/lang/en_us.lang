@@ -47,10 +47,24 @@ item.paradoxal_boots.name=Paradoxal Boots
 
 item.solar_helmet.name=Solar Helmet
 item.solar_chest.name=Solar Chestplate
-item.solar_leg.name=Solar Leggging
+item.solar_leg.name=Solar Legggings
 item.solar_boots.name=Solar Boots
 
 item.dark_helmet.name=Dark Helmet
 item.dark_chest.name=Dark Chestplate
-item.dark_leg.name=Dark Legging
+item.dark_leg.name=Dark Leggings
 item.dark_boots.name=Dark Boots
+
+item.dragon_chest.name=Dragon Chesplate
+item.dragon_boots.name=Dragon Boots
+item.dragon_helmet.name=Dragon Helmet
+item.dragon_leg.name=Dragon Leggings
+
+item.dragon_sword.name=Dragon Sword
+item.dragon_pickaxe.name=Dragon Pickaxe
+item.dragon_axe.name=Dragon Axe
+item.dragon_shovel.name=Dragon Shovel
+
+item.dragon_ruby.name=Dragon Ruby
+item.dragon_ingot.name=Dragon Ingot
+item.astrral_core.name=Astral Core

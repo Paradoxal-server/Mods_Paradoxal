@@ -21,20 +21,7 @@ public class GenerateOre implements IWorldGenerator {
         switch (world.provider.getDimensionType())
         {
             case OVERWORLD:
-                if (world.getWorldInfo().getWorldName() == "minage") {
-                    Main.logger.debug("Generate Ore","World minage");
-                    generateSurface(world, random, chunkX * 16, chunkZ * 16);
-                }
-                else {
-                }
-                if (world.getWorldInfo().getWorldName() == "minage1") {
-                    Main.logger.debug("Generate Ore","World no minage");
-                    generateSurface(world, random, chunkX * 16, chunkZ * 16);
-                }
-                else
-                 {
-                        Main.logger.debug("Generate Ore","World no minage");
-                 }
+                generateSurface(world, random, chunkX * 16, chunkZ * 16);
             case NETHER:
                 generateNether(world,random,chunkX*16,chunkZ*16);
             case THE_END:
